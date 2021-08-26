@@ -52,7 +52,7 @@ print(files_list)
     #         text = page.extract_text()#提取文本
     #         txt_file = open(r"C:\Users\heliu001\Desktop\python\report\1.txt",mode='a',encoding='utf-8')
     #         txt_file.write(text)
-#中华人民共和国00000000000
+#中华人民共和国1111111111111111111111111
 
 for i in range(files_quantity):
     file_handling = files_list[i]
