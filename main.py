@@ -1,4 +1,5 @@
 # This is a sample Python script.
+#中华人民共和国44444444444444444444
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
@@ -52,7 +53,7 @@ print(files_list)
     #         text = page.extract_text()#提取文本
     #         txt_file = open(r"C:\Users\heliu001\Desktop\python\report\1.txt",mode='a',encoding='utf-8')
     #         txt_file.write(text)
-#中华人民共和国1111111111111111111111111
+
 
 for i in range(files_quantity):
     file_handling = files_list[i]
