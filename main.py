@@ -9,8 +9,7 @@ import os
 # files = getfiles(path)
 # print(type(files))
 # print(files)
-
-
+import re
 
 import pdfminer
 import pdfplumber
@@ -53,12 +52,30 @@ print(files_list)
     #         text = page.extract_text()#提取文本
     #         txt_file = open(r"C:\Users\heliu001\Desktop\python\report\1.txt",mode='a',encoding='utf-8')
     #         txt_file.write(text)
+#中华人民共和国123
+
+for i in range(files_quantity):
+    file_handling = files_list[i]
+    path_handling = 'C:\\Users\\heliu001\\Desktop\\python\\report\\'+ file_handling
+    print('************')
+
+    print(file_handling)
+
+    # with pdfplumber.open("C:\\Users\\heliu001\\Desktop\\python\\report\\Measurement report (As received)_1-13856418768-10.pdf") as pdf:
+    with pdfplumber.open(path_handling) as pdf:
+        page01 = pdf.pages[0]
+        page01_text = page01.extract_text()#提取文本
+
+        # print(type(page01_text))
+        # print(page01_text)
+
+        so=re.findall(r'Certificate Number(.*?)\n',page01_text,re.S)
+        model=re.findall(r'Model Number(.*?)\n',page01_text,re.S)
+        serial=re.findall(r'Serial Number(.*?)\n',page01_text,re.S)
+        procedure=re.findall(r'Test Executive(.*?)\n',page01_text,re.S)
 
 
-with pdfplumber.open("C:\\Users\\heliu001\\Desktop\\python\\report\\Measurement report (As received)_1-13856418768-10.pdf") as pdf:
-    page01 = pdf.pages[2]
-    text = page01.extract_text()#提取文本
-    print(text)
+    print(model,serial,so,procedure)
 
 
 # def print_hi(name):
